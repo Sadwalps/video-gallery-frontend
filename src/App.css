@@ -1,1 +1,14 @@
+/* header */
+.hearticondiv{
+    font-size: 30px;
+    color: red;
+   
+}
+ .hearticon:hover  {
+    font-size: 40px;
+    color: red;
+    transition-duration: .2s;
+}
+
+
 

@@ -1,14 +1,20 @@
 /* header */
 .hearticondiv{
-    font-size: 30px;
-    color: red;
-   
+    font-size: 30px; 
+}
+ .hearticon  {
+    color: red; 
 }
  .hearticon:hover  {
     font-size: 40px;
-    color: red;
+    color: rgb(255, 51, 0);
     transition-duration: .2s;
 }
-
+.homepagemaindiv{
+    background-image: url(https://wallpapercave.com/wp/wp9175828.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 120vh;
+}
 
 

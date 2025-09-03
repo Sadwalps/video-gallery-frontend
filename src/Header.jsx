@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 function Header() {
   return (
     <>
-      <Navbar className="">
+      <Navbar className="" style={{height:"70px"}}>
         <Container>
           <Navbar.Brand href="/">
             <img

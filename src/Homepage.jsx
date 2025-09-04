@@ -84,7 +84,6 @@ function Homepage() {
                   <div className='col-lg-4 col-6 '><Link> <div className='categorydiv'><img className='w-100 imgs' src="https://tse1.mm.bing.net/th/id/OIP.L0QriE9s9rT43YdhQX5JggHaE8?r=0&cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="" /> <h5 className='categoryname text-light'>Audio/video songs</h5></div></Link></div>
                   <div className='col-lg-4 col-6 '><Link> <div className='categorydiv'><img className='w-100 imgs' src="https://www.techsmith.es/blog/wp-content/uploads/2023/03/how-to-make-a-youtube-video.png" alt="" /> <h5 className='categoryname text-light'>Audio/video songs</h5></div></Link></div>
 
-
                 </div>
               </div>
 

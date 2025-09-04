@@ -11,11 +11,43 @@
     transition-duration: .2s;
 }
 .homepagemaindiv{
-    background-image: url(https://wallpapercave.com/wp/wp9175828.jpg);
+    background-image: url(https://media.istockphoto.com/id/1397880811/photo/black-guitar-isometric-view-close-up-guitar-music-low-key-concept.jpg?s=612x612&w=0&k=20&c=Uru4o0GvhvatJ9EiMqYIPATmEmJXbAQz_mWS0WIfza4=);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 120vh;
+    height: 100vh;
+    
+}
+
+/* about */
+#about{
+    background-image: url(https://wallpapercave.com/wp/WsnABiF.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.categorydiv{
+    height: 15rem;
+    position: relative;
+
+}
+
+.imgs{
+    height: 12rem;
+
+}
+
+.imgs:hover{
+    padding: 10px;
+
+}
+.categoryname{
+    position: absolute;
+    bottom: 60px;
+    left: 30px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
 }
 
 
+
+/* https://wallpapercave.com/wp/wp9175828.jpg */

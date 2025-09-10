@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
 function Homepage() {
   const [show, setShow] = useState(false);
 
@@ -94,6 +95,8 @@ function Homepage() {
       
         {/* Explore the Best Video Collections in One Place */}
       </div>
+
+      <Footer/>
 
 
     </>

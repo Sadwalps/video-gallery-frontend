@@ -48,7 +48,6 @@
     
 }
 
-
 /* liked videos page */
 
 #likedvideomaindiv{
@@ -57,6 +56,9 @@
     background-repeat: no-repeat;
 }
 
+/* footer */
+#footermaindiv{
+    background-image: linear-gradient(to right bottom, black, rgb(62, 16, 82),black);
+}
 
-
-/* https://wallpapercave.com/wp/wp9175828.jpg */
+/*https://wallpapercave.com/wp/wp9175828.jpg*/

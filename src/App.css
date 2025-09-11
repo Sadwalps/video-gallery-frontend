@@ -1,122 +1,144 @@
 /* header */
-.hearticondiv{
-    font-size: 30px; 
+.hearticondiv {
+    font-size: 30px;
 }
- .hearticon  {
-    color: red; 
+
+.hearticon {
+    color: red;
 }
- .hearticon:hover  {
+
+.hearticon:hover {
     font-size: 40px;
     color: rgb(255, 51, 0);
     transition-duration: .2s;
 }
-.homepagemaindiv{
+
+.homepagemaindiv {
     background-image: url(https://media.istockphoto.com/id/1397880811/photo/black-guitar-isometric-view-close-up-guitar-music-low-key-concept.jpg?s=612x612&w=0&k=20&c=Uru4o0GvhvatJ9EiMqYIPATmEmJXbAQz_mWS0WIfza4=);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
-    
 }
 
 /* about */
-#about{
+#about {
     background-image: url(https://wallpapercave.com/wp/WsnABiF.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
-.categorydiv{
+
+.categorydiv {
     height: 15rem;
     position: relative;
-
 }
 
-.imgs{
+.imgs {
     height: 12rem;
-
 }
 
-.imgs:hover{
+.imgs:hover {
     padding: 10px;
+    transition-duration: .1s;
 
 }
-.categoryname{
+
+.categoryname {
     position: absolute;
     bottom: 60px;
     left: 30px;
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
 }
 
 /* liked videos page */
 
-#likedvideomaindiv{
- background-image: url(https://wallpapercave.com/wp/WsnABiF.jpg);
+#likedvideomaindiv {
+    background-image: url(https://wallpapercave.com/wp/WsnABiF.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
-#playbtn{  
-   color:rgb(40, 114, 194) ;
+
+#playbtn {
+    color: rgb(40, 114, 194);
     font-weight: bold;
 }
-#playbtn:hover{
+
+#playbtn:hover {
     background-color: rgb(40, 114, 194);
     color: white;
     font-weight: bold;
 }
-#removebtn{  
-   color:rgb(236, 27, 37) ;
+
+#removebtn {
+    color: rgb(236, 27, 37);
     font-weight: bold;
 }
-#removebtn:hover{
+
+#removebtn:hover {
     background-color: rgb(236, 27, 37);
     color: white;
     font-weight: bold;
 }
-#nolikedvideodiv{
+
+#nolikedvideodiv {
     height: 100vh;
-    
+
 }
-.emptytitle{
+
+.emptytitle {
     font-size: 50px;
     background-image: linear-gradient(to right bottom, rgb(135, 187, 229), rgb(41, 101, 128));
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.emptyimg{
+
+.emptyimg {
     width: 170px;
 }
-#nolikedvideodiv{
-    background-image:linear-gradient(to right bottom, rgb(36, 32, 32), rgb(57, 23, 51));
+
+#nolikedvideodiv {
+    background-image: linear-gradient(to right bottom, rgb(36, 32, 32), rgb(57, 23, 51));
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*video pages */
+.videopages {
+    background-image: url(https://wallpapercave.com/wp/WsnABiF.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 
 /* footer */
-#footermaindiv{
-    background-image: linear-gradient(to right bottom, black, rgb(62, 16, 82),black);
+#footermaindiv {
+    background-image: linear-gradient(to right bottom, black, rgb(62, 16, 82), black);
 }
-.footerlikedvideoslink{
+
+.footerlikedvideoslink {
     text-decoration: none;
     color: white;
 }
-.footerlikedvideoslink:hover{
-    text-decoration:underline;
+
+.footerlikedvideoslink:hover {
+    text-decoration: underline;
     color: red;
     font-size: 27px;
     transition-duration: .1s;
 }
-.footericons{
+
+.footericons {
     color: white;
     width: 30px;
 }
-.footericons:hover{
+
+.footericons:hover {
     color: blueviolet;
     transition-duration: .1s;
-    cursor:pointer;
+    cursor: pointer;
 }
-.icons:hover{
+
+.icons:hover {
     font-size: 30px;
 
 }

@@ -76,15 +76,15 @@ function Homepage() {
               <div className='container-fluid mt-lg-5 mt-3'>
                 <h5 className='text-light text-center mb-4'>Now select a category and check added videos in it</h5>
                 <div className="row">
-                  <div className='col-lg-4 col-6 '><Link to={'Songs'}> <div className='categorydiv'><img className='w-100 imgs' src="https://is4-ssl.mzstatic.com/image/thumb/Purple116/v4/69/7d/8e/697d8e82-6a57-5cff-9596-b75e8d903475/AppIcon-1x_U007emarketing-0-7-0-85-220.png/1200x630wa.png" alt="" />
+                  <div className='col-lg-4 col-6 '><Link to={'songs'}> <div className='categorydiv'><img className='w-100 imgs' src="https://is4-ssl.mzstatic.com/image/thumb/Purple116/v4/69/7d/8e/697d8e82-6a57-5cff-9596-b75e8d903475/AppIcon-1x_U007emarketing-0-7-0-85-220.png/1200x630wa.png" alt="" />
                   <h5 className='categoryname text-dark'>Audio/video songs</h5></div></Link></div>
 
-                  <div className='col-lg-4 col-6 '><Link> <div className='categorydiv'><img className='w-100 imgs' src="https://fleble.com/wp-content/uploads/2021/12/fleble-pros-of-gaming-1024x538.jpg" alt="" /><h5 className='categoryname text-light'>Audio/video songs</h5></div></Link></div>
+                  <div className='col-lg-4 col-6 '><Link to={'gaminghighlight'}> <div className='categorydiv'><img className='w-100 imgs' src="https://fleble.com/wp-content/uploads/2021/12/fleble-pros-of-gaming-1024x538.jpg" alt="" /><h5 className='categoryname text-light'>Gaming Highlight</h5></div></Link></div>
 
-                  <div className='col-lg-4 col-6 '><Link> <div className='categorydiv'><img className='w-100 imgs' src="https://blog.kesari.in/wp-content/uploads/2017/09/Kesari-Tours-HillStationTips.jpg" alt="" /><h5 className='categoryname text-light'>Audio/video songs</h5></div></Link></div>
-                  <div className='col-lg-4 col-6 '><Link> <div className='categorydiv'><img className='w-100 imgs' src="https://assets-prd.ignimgs.com/2022/08/17/top25animecharacters-blogroll-1660777571580.jpg" alt="" /><h5 className='categoryname text-light'>Audio/video songs</h5></div></Link></div>
-                  <div className='col-lg-4 col-6 '><Link> <div className='categorydiv'><img className='w-100 imgs' src="https://tse1.mm.bing.net/th/id/OIP.L0QriE9s9rT43YdhQX5JggHaE8?r=0&cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="" /> <h5 className='categoryname text-light'>Audio/video songs</h5></div></Link></div>
-                  <div className='col-lg-4 col-6 '><Link> <div className='categorydiv'><img className='w-100 imgs' src="https://www.techsmith.es/blog/wp-content/uploads/2023/03/how-to-make-a-youtube-video.png" alt="" /> <h5 className='categoryname text-light'>Audio/video songs</h5></div></Link></div>
+                  <div className='col-lg-4 col-6 '><Link to={'travelandlifestyle'}> <div className='categorydiv'><img className='w-100 imgs' src="https://blog.kesari.in/wp-content/uploads/2017/09/Kesari-Tours-HillStationTips.jpg" alt="" /><h5 className='categoryname text-light'>Travel & lifestyle</h5></div></Link></div>
+                  <div className='col-lg-4 col-6 '><Link to={'animecontent'}> <div className='categorydiv'><img className='w-100 imgs' src="https://assets-prd.ignimgs.com/2022/08/17/top25animecharacters-blogroll-1660777571580.jpg" alt="" /><h5 className='categoryname text-light'>Anime contents</h5></div></Link></div>
+                  <div className='col-lg-4 col-6 '><Link to={'educationandtutorial'}> <div className='categorydiv'><img className='w-100 imgs' src="https://tse1.mm.bing.net/th/id/OIP.L0QriE9s9rT43YdhQX5JggHaE8?r=0&cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="" /> <h5 className='categoryname text-light'>Education & tutorials</h5></div></Link></div>
+                  <div className='col-lg-4 col-6 '><Link to={'others'}> <div className='categorydiv'><img className='w-100 imgs' src="https://www.techsmith.es/blog/wp-content/uploads/2023/03/how-to-make-a-youtube-video.png" alt="" /> <h5 className='categoryname text-light'>Others</h5></div></Link></div>
 
                 </div>
               </div>

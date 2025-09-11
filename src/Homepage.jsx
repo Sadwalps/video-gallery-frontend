@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
+import Songs from './Songs';
 function Homepage() {
   const [show, setShow] = useState(false);
 
@@ -75,8 +76,8 @@ function Homepage() {
               <div className='container-fluid mt-lg-5 mt-3'>
                 <h5 className='text-light text-center mb-4'>Now select a category and check added videos in it</h5>
                 <div className="row">
-                  <div className='col-lg-4 col-6 '> <div className='categorydiv'><img className='w-100 imgs' src="https://is4-ssl.mzstatic.com/image/thumb/Purple116/v4/69/7d/8e/697d8e82-6a57-5cff-9596-b75e8d903475/AppIcon-1x_U007emarketing-0-7-0-85-220.png/1200x630wa.png" alt="" />
-                  <h5 className='categoryname text-dark'>Audio/video songs</h5></div></div>
+                  <div className='col-lg-4 col-6 '><Link to={'Songs'}> <div className='categorydiv'><img className='w-100 imgs' src="https://is4-ssl.mzstatic.com/image/thumb/Purple116/v4/69/7d/8e/697d8e82-6a57-5cff-9596-b75e8d903475/AppIcon-1x_U007emarketing-0-7-0-85-220.png/1200x630wa.png" alt="" />
+                  <h5 className='categoryname text-dark'>Audio/video songs</h5></div></Link></div>
 
                   <div className='col-lg-4 col-6 '><Link> <div className='categorydiv'><img className='w-100 imgs' src="https://fleble.com/wp-content/uploads/2021/12/fleble-pros-of-gaming-1024x538.jpg" alt="" /><h5 className='categoryname text-light'>Audio/video songs</h5></div></Link></div>
 

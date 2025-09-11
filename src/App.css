@@ -55,10 +55,70 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+#playbtn{  
+   color:rgb(40, 114, 194) ;
+    font-weight: bold;
+}
+#playbtn:hover{
+    background-color: rgb(40, 114, 194);
+    color: white;
+    font-weight: bold;
+}
+#removebtn{  
+   color:rgb(236, 27, 37) ;
+    font-weight: bold;
+}
+#removebtn:hover{
+    background-color: rgb(236, 27, 37);
+    color: white;
+    font-weight: bold;
+}
+#nolikedvideodiv{
+    height: 100vh;
+    
+}
+.emptytitle{
+    font-size: 50px;
+    background-image: linear-gradient(to right bottom, rgb(135, 187, 229), rgb(41, 101, 128));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.emptyimg{
+    width: 170px;
+}
+#nolikedvideodiv{
+    background-image:linear-gradient(to right bottom, rgb(36, 32, 32), rgb(57, 23, 51));
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 
 /* footer */
 #footermaindiv{
     background-image: linear-gradient(to right bottom, black, rgb(62, 16, 82),black);
+}
+.footerlikedvideoslink{
+    text-decoration: none;
+    color: white;
+}
+.footerlikedvideoslink:hover{
+    text-decoration:underline;
+    color: red;
+    font-size: 27px;
+    transition-duration: .1s;
+}
+.footericons{
+    color: white;
+    width: 30px;
+}
+.footericons:hover{
+    color: blueviolet;
+    transition-duration: .1s;
+    cursor:pointer;
+}
+.icons:hover{
+    font-size: 30px;
+
 }
 
 /*https://wallpapercave.com/wp/wp9175828.jpg*/

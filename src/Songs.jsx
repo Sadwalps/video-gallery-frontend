@@ -1,4 +1,4 @@
-import { faHeadphones } from '@fortawesome/free-solid-svg-icons'
+import { faHeadphones, faHeart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -50,7 +50,7 @@ function Songs() {
             <div className="col-md-10">
               {/* row for cards */}
               <div className="row">
-                {/* col for a single card */}
+            {/* col for a single card */}
                 <div className="col-lg-4 col-md-6 col-12 d-flex justify-content-center align-items-center px-lg-1 px-md-1 px-4 ">
                   <Card className='border border-3 border-info mt-4 p-1' style={{ width: '100%', backgroundColor: "transparent" }}>
                     <Card.Img variant="top" className='w-100  py-lg-1 h-100' src="https://cdn.mos.cms.futurecdn.net/PWTc8zKY2p6SedHqNFmf8P-970-80.png" />
@@ -58,42 +58,9 @@ function Songs() {
                       <div className='container-fluid p-0'>
                         <div className="row">
                           <div className="col-12"><marquee behavior="" direction=""><h4 className='text-center py-lg-3 text-light'>jsdakjskdajsdjalksjdksadasdasd</h4></marquee></div>
-                          <div className="col-6"><button className='btn border border-3 border-primary  w-100 py-lg-2 ' id='playbtn'>Play</button></div>
-                          <div className="col-6"><button className='btn  border border-3 border-danger  w-100 py-lg-2' id='removebtn'>Delete</button></div>
-                        </div>
-                      </div>
-                    </Card.Body>
-                  </Card>
-
-                </div>
-
-                {/* col for a single card */}
-                <div className="col-lg-4 col-md-6 col-12 d-flex justify-content-center align-items-center px-lg-1 px-md-1 px-4 ">
-                  <Card className='border border-3 border-info mt-4 p-1' style={{ width: '100%', backgroundColor: "transparent" }}>
-                    <Card.Img variant="top" className='w-100  py-lg-1 h-100' src="https://cdn.mos.cms.futurecdn.net/PWTc8zKY2p6SedHqNFmf8P-970-80.png" />
-                    <Card.Body>
-                      <div className='container-fluid p-0'>
-                        <div className="row">
-                          <div className="col-12"><marquee behavior="" direction=""><h4 className='text-center py-lg-3 text-light'>jsdakjskdajsdjalksjdksadasdasd</h4></marquee></div>
-                          <div className="col-6"><button className='btn border border-3 border-primary  w-100 py-lg-2 ' id='playbtn'>Play</button></div>
-                          <div className="col-6"><button className='btn  border border-3 border-danger  w-100 py-lg-2' id='removebtn'>Delete</button></div>
-                        </div>
-                      </div>
-                    </Card.Body>
-                  </Card>
-
-                </div>
-
-                {/* col for a single card */}
-                <div className="col-lg-4 col-md-6 col-12 d-flex justify-content-center align-items-center px-lg-1 px-md-1 px-4 ">
-                  <Card className='border border-3 border-info mt-4 p-1' style={{ width: '100%', backgroundColor: "transparent" }}>
-                    <Card.Img variant="top" className='w-100  py-lg-1 h-100' src="https://xpressmag.com.au/wp-content/uploads/2025/09/demon-slayer-2025-1.png" />
-                    <Card.Body>
-                      <div className='container-fluid p-0'>
-                        <div className="row">
-                          <div className="col-12"><marquee behavior="" direction=""><h4 className='text-center py-lg-3 text-light'>jsdakjskdajsdjalksjdksadasdasd</h4></marquee></div>
-                          <div className="col-6"><button className='btn border border-3 border-primary  w-100 py-lg-2 ' id='playbtn'>Play</button></div>
-                          <div className="col-6"><button className='btn  border border-3 border-danger  w-100 py-lg-2' id='removebtn'>Delete</button></div>
+                          <div className="col-4"><button className='btn border border-3 border-primary  w-100 py-lg-2 ' id='playbtn'>Play</button></div>
+                          <div className='col-4'><button className='btn  border border-3 border-danger  w-100 py-lg-2' id='likedbtn'><FontAwesomeIcon icon={faHeart} /></button></div>
+                          <div className="col-4"><button className='btn  border border-3 border-danger  w-100 py-lg-2' id='removebtn'>Delete</button></div>
                         </div>
                       </div>
                     </Card.Body>

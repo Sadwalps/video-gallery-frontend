@@ -109,6 +109,17 @@
     background-repeat: no-repeat;
 }
 
+#likedbtn {
+    color: rgb(236, 27, 37);
+    font-weight: bold;
+}
+
+#likedbtn:hover {
+    background-color: rgb(236, 27, 37);
+    color: white;
+    font-weight: bold;
+}
+
 
 /* footer */
 #footermaindiv {

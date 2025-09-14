@@ -153,5 +153,18 @@
     font-size: 30px;
 
 }
+/* page not found */
+.pnfheading{
+    font-size: 100px;
+    font-weight: bold;
+    background-image: linear-gradient(to right bottom, rgb(93, 8, 126), rgb(179, 22, 200));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.pnfsubheading{
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: blueviolet;
+}
 
 /*https://wallpapercave.com/wp/wp9175828.jpg*/

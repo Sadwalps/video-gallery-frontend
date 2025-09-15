@@ -6,9 +6,46 @@ import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import Songs from './Songs';
+import { addAudioVideoAPI } from './service/allApi';
 function Homepage() {
   const [show, setShow] = useState(false);
 
+  const [videodetails, setVideodetails] = useState({
+    title: "",
+    videoimgurl: "",
+    videourl: ""
+  })
+  console.log(videodetails);
+
+  const handleAdd = async () => {
+    const { title, videoimgurl, videourl } = videodetails
+    console.log(title, videoimgurl, videourl);
+    if (!title || !videoimgurl || !videourl) {
+      alert('fill the form completely')
+    } else {
+      if (videourl?.startsWith("https://youtu.be/")) {
+        let link = `https://www.youtube.com/embed/${videourl.slice(17, 28)}`
+        console.log(link);
+        const result = await addAudioVideoAPI({ title, videoimgurl, videourl: link })
+        console.log(result);
+        if(result.status>=200 && result.status<300){
+          alert(`video successfully Added`)
+        }else{
+          alert(`Something went wrong`)
+        }
+      } else {
+        let link = `https://www.youtube.com/embed/${videourl.slice(-11)}`
+        console.log(link);
+        const result = await addAudioVideoAPI({ title, videoimgurl, videourl: link })
+        console.log(result);
+        if(result.status>=200 && result.status<300){
+          alert(`video successfully Added`)
+        }else{
+          alert(`Something went wrong`)
+        }
+      }
+    }
+  }
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
@@ -39,15 +76,15 @@ function Homepage() {
                     <Modal.Title className='text-info' style={{ fontWeight: "bold" }}>Add Videos</Modal.Title>
                   </Modal.Header>
                   <Modal.Body >
-                    <input type="text" className='form-control py-2 text-center mt-2 bg-info text-light' placeholder='Title' style={{ fontWeight: "bold" }} />
-                    <input type="text" className='form-control py-2 text-center mt-2 bg-info text-light' placeholder='Video image url' style={{ fontWeight: "bold" }} />
-                    <input type="text" className='form-control py-2 text-center mt-2 bg-info text-light' placeholder='video url' style={{ fontWeight: "bold" }} />
+                    <input type="text" onChange={(e) => setVideodetails({ ...videodetails, title: e.target.value })} className='form-control py-2 text-center mt-2 bg-info text-light' placeholder='Title' style={{ fontWeight: "bold" }} />
+                    <input type="text" onChange={(e) => setVideodetails({ ...videodetails, videoimgurl: e.target.value })} className='form-control py-2 text-center mt-2 bg-info text-light' placeholder='Video image url' style={{ fontWeight: "bold" }} />
+                    <input type="text" onChange={(e) => setVideodetails({ ...videodetails, videourl: e.target.value })} className='form-control py-2 text-center mt-2 bg-info text-light' placeholder='video url' style={{ fontWeight: "bold" }} />
                   </Modal.Body>
                   <Modal.Footer >
                     <Button variant="danger" onClick={handleClose}>
                       Clear
                     </Button>
-                    <Button variant="success" onClick={handleClose}>
+                    <Button variant="success" onClick={handleAdd}>
                       Add
                     </Button>
                   </Modal.Footer>
@@ -77,7 +114,7 @@ function Homepage() {
                 <h5 className='text-light text-center mb-4'>Now select a category and check added videos in it</h5>
                 <div className="row">
                   <div className='col-lg-4 col-6 '><Link to={'songs'}> <div className='categorydiv'><img className='w-100 imgs' src="https://is4-ssl.mzstatic.com/image/thumb/Purple116/v4/69/7d/8e/697d8e82-6a57-5cff-9596-b75e8d903475/AppIcon-1x_U007emarketing-0-7-0-85-220.png/1200x630wa.png" alt="" />
-                  <h5 className='categoryname text-dark'>Audio/video songs</h5></div></Link></div>
+                    <h5 className='categoryname text-dark'>Audio/video songs</h5></div></Link></div>
 
                   <div className='col-lg-4 col-6 '><Link to={'gaminghighlight'}> <div className='categorydiv'><img className='w-100 imgs' src="https://fleble.com/wp-content/uploads/2021/12/fleble-pros-of-gaming-1024x538.jpg" alt="" /><h5 className='categoryname text-light'>Gaming Highlight</h5></div></Link></div>
 
@@ -93,11 +130,11 @@ function Homepage() {
             <div className="col-md-2"></div>
           </div>
         </div>
-      
+
         {/* Explore the Best Video Collections in One Place */}
       </div>
 
-      <Footer/>
+      <Footer />
 
 
     </>

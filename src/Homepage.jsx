@@ -6,9 +6,10 @@ import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import Songs from './Songs';
-import { addAudioVideoAPI } from './service/allApi';
+import { addAudioVideoAPI, addGamingHighlightsAPI, addTravelAndLifestyleAPI } from './service/allApi';
 function Homepage() {
   const [show, setShow] = useState(false);
+  const [btnname, setBtnname] = useState("")
 
   const [videodetails, setVideodetails] = useState({
     title: "",
@@ -20,34 +21,88 @@ function Homepage() {
   const handleAdd = async () => {
     const { title, videoimgurl, videourl } = videodetails
     console.log(title, videoimgurl, videourl);
+
     if (!title || !videoimgurl || !videourl) {
       alert('fill the form completely')
     } else {
-      if (videourl?.startsWith("https://youtu.be/")) {
-        let link = `https://www.youtube.com/embed/${videourl.slice(17, 28)}`
-        console.log(link);
-        const result = await addAudioVideoAPI({ title, videoimgurl, videourl: link })
-        console.log(result);
-        if(result.status>=200 && result.status<300){
-          alert(`video successfully Added`)
-        }else{
-          alert(`Something went wrong`)
+      if (btnname == "audiovideosongs") {
+        if (videourl?.startsWith("https://youtu.be/")) {
+          let link = `https://www.youtube.com/embed/${videourl.slice(17, 28)}`
+          console.log(link);
+          const result = await addAudioVideoAPI({ title, videoimgurl, videourl: link })
+          console.log(result);
+          if (result.status >= 200 && result.status < 300) {
+            alert(`video successfully Added`)
+          } else {
+            alert(`Something went wrong`)
+          }
+        } else {
+          let link = `https://www.youtube.com/embed/${videourl.slice(-11)}`
+          console.log(link);
+          const result = await addAudioVideoAPI({ title, videoimgurl, videourl: link })
+          console.log(result);
+          if (result.status >= 200 && result.status < 300) {
+            alert(`video successfully Added`)
+          } else {
+            alert(`Something went wrong`)
+          }
         }
-      } else {
-        let link = `https://www.youtube.com/embed/${videourl.slice(-11)}`
-        console.log(link);
-        const result = await addAudioVideoAPI({ title, videoimgurl, videourl: link })
-        console.log(result);
-        if(result.status>=200 && result.status<300){
-          alert(`video successfully Added`)
-        }else{
-          alert(`Something went wrong`)
+      }else if(btnname == "gaminghighlights"){
+         if (videourl?.startsWith("https://youtu.be/")) {
+          let link = `https://www.youtube.com/embed/${videourl.slice(17, 28)}`
+          console.log(link);
+          const result = await addGamingHighlightsAPI({ title, videoimgurl, videourl: link })
+          console.log(result);
+          if (result.status >= 200 && result.status < 300) {
+            alert(`video successfully Added`)
+          } else {
+            alert(`Something went wrong`)
+          }
+        } else {
+          let link = `https://www.youtube.com/embed/${videourl.slice(-11)}`
+          console.log(link);
+          const result = await addGamingHighlightsAPI({ title, videoimgurl, videourl: link })
+          console.log(result);
+          if (result.status >= 200 && result.status < 300) {
+            alert(`video successfully Added`)
+          } else {
+            alert(`Something went wrong`)
+          }
+        }
+      }else if(btnname == "travelandlifestyle"){
+         if (videourl?.startsWith("https://youtu.be/")) {
+          let link = `https://www.youtube.com/embed/${videourl.slice(17, 28)}`
+          console.log(link);
+          const result = await addTravelAndLifestyleAPI({ title, videoimgurl, videourl: link })
+          console.log(result);
+          if (result.status >= 200 && result.status < 300) {
+            alert(`video successfully Added`)
+          } else {
+            alert(`Something went wrong`)
+          }
+        } else {
+          let link = `https://www.youtube.com/embed/${videourl.slice(-11)}`
+          console.log(link);
+          const result = await addTravelAndLifestyleAPI({ title, videoimgurl, videourl: link })
+          console.log(result);
+          if (result.status >= 200 && result.status < 300) {
+            alert(`video successfully Added`)
+          } else {
+            alert(`Something went wrong`)
+          }
         }
       }
     }
+
   }
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = (e) => {
+    setShow(true);
+    console.log(e.target.name);
+    setBtnname(e.target.name)
+  }
+  console.log(btnname);
+
   return (
     <>
       <div className='homepagemaindiv'>
@@ -63,12 +118,12 @@ function Homepage() {
               <h5 className='text-light mb-3' style={{ textAlign: "center", fontWeight: "bold" }}> Upload Videos to Your Favorite Categories. </h5>
               <div className='container-fluid '>
                 <div className="row">
-                  <div className="col-lg-4 col-6 text-center"> <button onClick={handleShow} className='btn btn-primary py-2 px-3 mt-3'>Audio/video songs</button></div>
-                  <div className="col-lg-4 col-6 text-center"> <button onClick={handleShow} className='btn btn-primary py-2 px-3 mt-3'>Gaming Highlight</button></div>
-                  <div className="col-lg-4 col-6 text-center"> <button onClick={handleShow} className='btn btn-primary py-2 px-3 mt-3'>Travel & lifestyle</button></div>
-                  <div className="col-lg-4 col-6 text-center"> <button onClick={handleShow} className='btn btn-primary py-2 px-3 mt-3'>Anime contents</button></div>
-                  <div className="col-lg-4 col-6 text-center"> <button onClick={handleShow} className='btn btn-primary py-2 px-3 mt-3'>Education & tutorials</button></div>
-                  <div className="col-lg-4 col-6 text-center"> <button onClick={handleShow} className='btn btn-primary py-2 px-3 mt-3'>Others</button></div>
+                  <div className="col-lg-4 col-6 text-center"> <button onClick={(e) => handleShow(e)} name='audiovideosongs' className='btn btn-primary py-2 px-3 mt-3'>Audio/video songs</button></div>
+                  <div className="col-lg-4 col-6 text-center"> <button onClick={(e) => handleShow(e)} name='gaminghighlights' className='btn btn-primary py-2 px-3 mt-3'>Gaming Highlight</button></div>
+                  <div className="col-lg-4 col-6 text-center"> <button onClick={(e) => handleShow(e)} name='travelandlifestyle' className='btn btn-primary py-2 px-3 mt-3'>Travel & lifestyle</button></div>
+                  <div className="col-lg-4 col-6 text-center"> <button className='btn btn-primary py-2 px-3 mt-3'>Anime contents</button></div>
+                  <div className="col-lg-4 col-6 text-center"> <button className='btn btn-primary py-2 px-3 mt-3'>Education & tutorials</button></div>
+                  <div className="col-lg-4 col-6 text-center"> <button className='btn btn-primary py-2 px-3 mt-3'>Others</button></div>
                 </div>
                 {/* modal */}
                 <Modal show={show} onHide={handleClose} >

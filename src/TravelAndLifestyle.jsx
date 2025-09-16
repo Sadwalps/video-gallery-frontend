@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
@@ -6,10 +6,25 @@ import Card from 'react-bootstrap/Card';
 import emptybox from './assets/emptybox.png'
 import Modal from 'react-bootstrap/Modal';
 import { faGlobe, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { getTravelAndLifestyleAPI } from './service/allApi';
 function TravelAndLifestyle() {
   const [show, setShow] = useState(false);
+  const [travelandlifestyle, setTravelandlifestyle] = useState([])
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  
+  const gettravelandlifestyle = async()=>{
+    const result = await getTravelAndLifestyleAPI()
+    console.log(result);
+    setTravelandlifestyle(result.data)
+    
+  }
+  console.log(travelandlifestyle);
+  
+
+  useEffect(()=>{
+gettravelandlifestyle()
+  },[])
   return (
     <>
       <div className='videopages'>
@@ -42,20 +57,20 @@ function TravelAndLifestyle() {
 
         <h1 className='text-center text-primary pt-5 pb-lg-4 pb-1'><FontAwesomeIcon icon={faGlobe} className='me-3' />Travel And Lifestyle</h1>
 
-        <div className='container-fluid'>
+       {travelandlifestyle? <div className='container-fluid pb-5'>
           <div className="row">
             <div className="col-md-1"></div>
             <div className="col-md-10">
               {/* row for cards */}
               <div className="row">
                {/* col for a single card */}
-                <div className="col-lg-4 col-md-6 col-12 d-flex justify-content-center align-items-center px-lg-1 px-md-1 px-4 ">
+               {travelandlifestyle?.map((item)=>( <div className="col-lg-4 col-md-6 col-12 d-flex justify-content-center align-items-center px-lg-1 px-md-1 px-4 ">
                   <Card className='border border-3 border-info mt-4 p-1' style={{ width: '100%', backgroundColor: "transparent" }}>
-                    <Card.Img variant="top" className='w-100  py-lg-1 h-100' src="https://cdn.mos.cms.futurecdn.net/PWTc8zKY2p6SedHqNFmf8P-970-80.png" />
+                    <Card.Img variant="top" className='w-100  py-lg-1 h-100' src={item?.videoimgurl} />
                     <Card.Body>
                       <div className='container-fluid p-0'>
                         <div className="row">
-                          <div className="col-12"><marquee behavior="" direction=""><h4 className='text-center py-lg-3 text-light'>jsdakjskdajsdjalksjdksadasdasd</h4></marquee></div>
+                          <div className="col-12"><marquee behavior="" direction=""><h4 className='text-center py-lg-3 text-light'>{item?.title}</h4></marquee></div>
                           <div className="col-4"><button className='btn border border-3 border-primary  w-100 py-lg-2 ' id='playbtn'>Play</button></div>
                           <div className='col-4'><button className='btn  border border-3 border-danger  w-100 py-lg-2' id='likedbtn'><FontAwesomeIcon icon={faHeart} /></button></div>
                           <div className="col-4"><button className='btn  border border-3 border-danger  w-100 py-lg-2' id='removebtn'>Delete</button></div>
@@ -64,15 +79,15 @@ function TravelAndLifestyle() {
                     </Card.Body>
                   </Card>
 
-                </div>
+                </div>))}
 
               </div>
             </div>
             <div className="col-md-1"></div>
           </div>
-        </div>
+        </div>:
 
-        {/* div which need to be appear if no videos added */}
+    
         <div id='' className='container-fluid '>
           <div className="row " >
             <div className="col-md-2"></div>
@@ -82,7 +97,7 @@ function TravelAndLifestyle() {
             </div>
             <div className="col-md-2"></div>
           </div>
-        </div>
+        </div>}
 
       </div>
     </>

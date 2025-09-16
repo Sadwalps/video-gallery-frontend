@@ -6,7 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import Songs from './Songs';
-import { addAudioVideoAPI, addGamingHighlightsAPI, addTravelAndLifestyleAPI } from './service/allApi';
+import { addAnimeContentsAPI, addAudioVideoAPI, addEducationTutorialAPI, addGamingHighlightsAPI, addOtherVideoAPI, addTravelAndLifestyleAPI } from './service/allApi';
 function Homepage() {
   const [show, setShow] = useState(false);
   const [btnname, setBtnname] = useState("")
@@ -33,6 +33,7 @@ function Homepage() {
           console.log(result);
           if (result.status >= 200 && result.status < 300) {
             alert(`video successfully Added`)
+            handleClose()
           } else {
             alert(`Something went wrong`)
           }
@@ -43,6 +44,7 @@ function Homepage() {
           console.log(result);
           if (result.status >= 200 && result.status < 300) {
             alert(`video successfully Added`)
+            handleClose()
           } else {
             alert(`Something went wrong`)
           }
@@ -55,6 +57,7 @@ function Homepage() {
           console.log(result);
           if (result.status >= 200 && result.status < 300) {
             alert(`video successfully Added`)
+            handleClose()
           } else {
             alert(`Something went wrong`)
           }
@@ -65,6 +68,7 @@ function Homepage() {
           console.log(result);
           if (result.status >= 200 && result.status < 300) {
             alert(`video successfully Added`)
+            handleClose()
           } else {
             alert(`Something went wrong`)
           }
@@ -77,6 +81,7 @@ function Homepage() {
           console.log(result);
           if (result.status >= 200 && result.status < 300) {
             alert(`video successfully Added`)
+            handleClose()
           } else {
             alert(`Something went wrong`)
           }
@@ -87,6 +92,79 @@ function Homepage() {
           console.log(result);
           if (result.status >= 200 && result.status < 300) {
             alert(`video successfully Added`)
+            handleClose()
+          } else {
+            alert(`Something went wrong`)
+          }
+        }
+      }else if(btnname == "animecontents"){
+         if (videourl?.startsWith("https://youtu.be/")) {
+          let link = `https://www.youtube.com/embed/${videourl.slice(17, 28)}`
+          console.log(link);
+          const result = await addAnimeContentsAPI({ title, videoimgurl, videourl: link })
+          console.log(result);
+          if (result.status >= 200 && result.status < 300) {
+            alert(`video successfully Added`)
+            handleClose()
+          } else {
+            alert(`Something went wrong`)
+          }
+        } else {
+          let link = `https://www.youtube.com/embed/${videourl.slice(-11)}`
+          console.log(link);
+          const result = await addAnimeContentsAPI({ title, videoimgurl, videourl: link })
+          console.log(result);
+          if (result.status >= 200 && result.status < 300) {
+            alert(`video successfully Added`)
+            handleClose()
+          } else {
+            alert(`Something went wrong`)
+          }
+        }
+      }else if(btnname == "educationandtutorial"){
+         if (videourl?.startsWith("https://youtu.be/")) {
+          let link = `https://www.youtube.com/embed/${videourl.slice(17, 28)}`
+          console.log(link);
+          const result = await addEducationTutorialAPI({ title, videoimgurl, videourl: link })
+          console.log(result);
+          if (result.status >= 200 && result.status < 300) {
+            alert(`video successfully Added`)
+            handleClose()
+          } else {
+            alert(`Something went wrong`)
+          }
+        } else {
+          let link = `https://www.youtube.com/embed/${videourl.slice(-11)}`
+          console.log(link);
+          const result = await addEducationTutorialAPI({ title, videoimgurl, videourl: link })
+          console.log(result);
+          if (result.status >= 200 && result.status < 300) {
+            alert(`video successfully Added`)
+            handleClose()
+          } else {
+            alert(`Something went wrong`)
+          }
+        }
+      }else if(btnname == "othervideos"){
+         if (videourl?.startsWith("https://youtu.be/")) {
+          let link = `https://www.youtube.com/embed/${videourl.slice(17, 28)}`
+          console.log(link);
+          const result = await addOtherVideoAPI({ title, videoimgurl, videourl: link })
+          console.log(result);
+          if (result.status >= 200 && result.status < 300) {
+            alert(`video successfully Added`)
+            handleClose()
+          } else {
+            alert(`Something went wrong`)
+          }
+        } else {
+          let link = `https://www.youtube.com/embed/${videourl.slice(-11)}`
+          console.log(link);
+          const result = await addOtherVideoAPI({ title, videoimgurl, videourl: link })
+          console.log(result);
+          if (result.status >= 200 && result.status < 300) {
+            alert(`video successfully Added`)
+            handleClose()
           } else {
             alert(`Something went wrong`)
           }
@@ -121,9 +199,9 @@ function Homepage() {
                   <div className="col-lg-4 col-6 text-center"> <button onClick={(e) => handleShow(e)} name='audiovideosongs' className='btn btn-primary py-2 px-3 mt-3'>Audio/video songs</button></div>
                   <div className="col-lg-4 col-6 text-center"> <button onClick={(e) => handleShow(e)} name='gaminghighlights' className='btn btn-primary py-2 px-3 mt-3'>Gaming Highlight</button></div>
                   <div className="col-lg-4 col-6 text-center"> <button onClick={(e) => handleShow(e)} name='travelandlifestyle' className='btn btn-primary py-2 px-3 mt-3'>Travel & lifestyle</button></div>
-                  <div className="col-lg-4 col-6 text-center"> <button className='btn btn-primary py-2 px-3 mt-3'>Anime contents</button></div>
-                  <div className="col-lg-4 col-6 text-center"> <button className='btn btn-primary py-2 px-3 mt-3'>Education & tutorials</button></div>
-                  <div className="col-lg-4 col-6 text-center"> <button className='btn btn-primary py-2 px-3 mt-3'>Others</button></div>
+                  <div className="col-lg-4 col-6 text-center"> <button onClick={(e) => handleShow(e)} name='animecontents' className='btn btn-primary py-2 px-3 mt-3'>Anime contents</button></div>
+                  <div className="col-lg-4 col-6 text-center"> <button onClick={(e) => handleShow(e)} name='educationandtutorial' className='btn btn-primary py-2 px-3 mt-3'>Education & tutorials</button></div>
+                  <div className="col-lg-4 col-6 text-center"> <button onClick={(e) => handleShow(e)} name='othervideos' className='btn btn-primary py-2 px-3 mt-3'>Others</button></div>
                 </div>
                 {/* modal */}
                 <Modal show={show} onHide={handleClose} >

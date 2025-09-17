@@ -26,6 +26,11 @@ export const getGamingHighlightsAPI = async()=>{
     return await commonAPI(`GET`,`${serverURL}/gamingHighlights`, "")
 }
 
+//delete gaming highlights api
+export const deleteGamingHighlightsAPI = async(id)=>{
+    return await commonAPI(`DELETE`,`${serverURL}/gamingHighlights/${id}` ,{})
+}
+
 //add travel and lifestyle api
 export const addTravelAndLifestyleAPI = async(reqbody)=>{
     return await commonAPI(`POST`,`${serverURL}/travelAndLifestyle`,reqbody)
@@ -34,6 +39,11 @@ export const addTravelAndLifestyleAPI = async(reqbody)=>{
 //get travel and lifestyle api
 export const getTravelAndLifestyleAPI = async()=>{
     return await commonAPI(`GET`,`${serverURL}/travelAndLifestyle`,"")
+}
+
+//delete travel and lifestyle api
+export const deleteTravelAndLifestyleAPI = async(id)=>{
+    return await commonAPI(`DELETE`,`${serverURL}/travelAndLifestyle/${id}`,{})
 }
 
 //add anime contents api
@@ -46,6 +56,11 @@ export const getAnimeContentAPI = async()=>{
 return await commonAPI(`GET`,`${serverURL}/animeContents`,"")
 }
 
+//delete anime content api
+export const deleteAnimeContentAPI = async(id)=>{
+    return await commonAPI(`DELETE`, `${serverURL}/animeContents/${id}`,{})
+}
+
 //add education tutorial api
 export const addEducationTutorialAPI = async(reqbody)=>{
     return await commonAPI(`POST`,`${serverURL}/educationAndTutorial`,reqbody)
@@ -56,6 +71,11 @@ export const getEducationTutorialAPI = async()=>{
     return await commonAPI(`GET`,`${serverURL}/educationAndTutorial`,"")
 }
 
+//delete eduaction tutorial api
+export const deleteEducationTutorialAPI = async(id)=>{
+    return await commonAPI(`DELETE`,`${serverURL}/educationAndTutorial/${id}`,{})
+}
+
 //add other videos api
 export const addOtherVideoAPI = async(reqbody)=>{
     return await commonAPI(`POST`,`${serverURL}/otherVideos`, reqbody)
@@ -64,5 +84,10 @@ export const addOtherVideoAPI = async(reqbody)=>{
 //get other videos api
 export const getOtherVideoAPI = async()=>{
     return await commonAPI(`GET`, `${serverURL}/otherVideos`,"")
+}
+
+//delete other videos api
+export const deleteOtherVideoAPI = async(id)=>{
+    return await commonAPI(`DELETE`,`${serverURL}/otherVideos/${id}`,{})
 }
 

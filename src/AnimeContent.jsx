@@ -6,25 +6,37 @@ import Card from 'react-bootstrap/Card';
 import emptybox from './assets/emptybox.png'
 import Modal from 'react-bootstrap/Modal';
 import { faHeart, faVideo } from '@fortawesome/free-solid-svg-icons';
-import { getAnimeContentAPI } from './service/allApi';
+import { deleteAnimeContentAPI, getAnimeContentAPI } from './service/allApi';
 import Videocard from './Videocard';
 function AnimeContent() {
   const [show, setShow] = useState(false);
   const [animeContent, setAnimeContent] = useState([])
+  const [deleteStatus, setDeleteStatus] = useState([])
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const getanimecontents = async()=>{
+  const getanimecontents = async () => {
     const result = await getAnimeContentAPI()
     console.log(result);
     setAnimeContent(result.data)
   }
   console.log(animeContent);
-  
 
-  useEffect(()=>{
-getanimecontents()
-  },[])
+  const handleDelete = async (id) => {
+    const result = await deleteAnimeContentAPI(id)
+    if (result.status >= 200 && result.status < 300) {
+      setDeleteStatus(result)
+      alert(`Video Successfully Deleted`)
+    } else {
+      alert(`Something Went Wrong`)
+    }
+
+  }
+
+
+  useEffect(() => {
+    getanimecontents()
+  }, [deleteStatus])
   return (
     <>
       <div className='videopages'>
@@ -57,23 +69,23 @@ getanimecontents()
 
         <h1 className='text-center text-primary pt-5 pb-lg-4 pb-1'><FontAwesomeIcon icon={faVideo} className='me-3' />Anime Contents</h1>
 
-       { animeContent?<div className='container-fluid pb-5'>
+        {animeContent?.length > 0 ? <div className='container-fluid pb-5' style={{minHeight:"75vh"}}>
           <div className="row">
             <div className="col-md-1"></div>
             <div className="col-md-10">
               {/* row for cards */}
               <div className="row">
                 {/* col for a single card */}
-                {animeContent?.map((item)=>(<div className="col-lg-4 col-md-6 col-12 d-flex justify-content-center align-items-center px-lg-1 px-md-1 px-4 ">
+                {animeContent?.map((item) => (<div className="col-lg-4 col-md-6 col-12 d-flex justify-content-center align-items-center px-lg-1 px-md-1 px-4 ">
                   <Card className='border border-3 border-info mt-4 p-1' style={{ width: '100%', backgroundColor: "transparent" }}>
-                    <Card.Img variant="top" className='w-100  py-lg-1 h-100' src={item?.videoimgurl}/>
+                    <Card.Img variant="top" className='w-100  py-lg-1 h-100' src={item?.videoimgurl} />
                     <Card.Body>
                       <div className='container-fluid p-0'>
                         <div className="row">
                           <div className="col-12"><marquee behavior="" direction=""><h4 className='text-center py-lg-3 text-light'>{item?.title}</h4></marquee></div>
-                          <div className="col-4"><Videocard video={item}/></div>
+                          <div className="col-4"><Videocard video={item} /></div>
                           <div className='col-4'><button className='btn  border border-3 border-danger  w-100 py-lg-2' id='likedbtn'><FontAwesomeIcon icon={faHeart} /></button></div>
-                          <div className="col-4"><button className='btn  border border-3 border-danger  w-100 py-lg-2' id='removebtn'>Delete</button></div>
+                          <div className="col-4"><button onClick={() => handleDelete(item?.id)} className='btn  border border-3 border-danger  w-100 py-lg-2' id='removebtn'>Delete</button></div>
                         </div>
                       </div>
                     </Card.Body>
@@ -81,25 +93,25 @@ getanimecontents()
 
                 </div>))}
 
-                
+
 
               </div>
             </div>
             <div className="col-md-1"></div>
           </div>
-        </div>:
+        </div> :
 
-        
-        <div id='' className='container-fluid '>
-          <div className="row " >
-            <div className="col-md-2"></div>
-            <div className="col-md-8 d-flex flex-column   justify-content-center align-items-center" style={{ height: "100vh" }}>
-              <img src={emptybox} className='emptyimg' alt="" />
-              <h1 className='emptytitle'>No videos added yet</h1>
+
+          <div id='' className='container-fluid '>
+            <div className="row " >
+              <div className="col-md-2"></div>
+              <div className="col-md-8 d-flex flex-column   justify-content-center align-items-center" style={{ height: "75vh" }}>
+                <img src={emptybox} className='emptyimg' alt="" />
+                <h1 className='emptytitle'>No videos added yet</h1>
+              </div>
+              <div className="col-md-2"></div>
             </div>
-            <div className="col-md-2"></div>
-          </div>
-        </div>}
+          </div>}
 
       </div>
     </>

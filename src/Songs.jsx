@@ -71,7 +71,7 @@ function Songs() {
 
         <h1 className='text-center text-primary pt-5 pb-lg-4 pb-1'><FontAwesomeIcon icon={faHeadphones} className='me-3' />Audio And Video Songs</h1>
 
-        {audiovideosongs ? <div className='container-fluid pb-5'>
+        {audiovideosongs?.length > 0 ? <div className='container-fluid pb-5' style={{minHeight:"75vh"}}>
           <div className="row">
             <div className="col-md-1"></div>
             <div className="col-md-10">
@@ -108,7 +108,7 @@ function Songs() {
           <div id='' className='container-fluid '>
             <div className="row " >
               <div className="col-md-2"></div>
-              <div className="col-md-8 d-flex flex-column   justify-content-center align-items-center" style={{ height: "100vh" }}>
+              <div className="col-md-8 d-flex flex-column   justify-content-center align-items-center" style={{ height: "75vh" }}>
                 <img src={emptybox} className='emptyimg' alt="" />
                 <h1 className='emptytitle'>No videos added yet</h1>
               </div>

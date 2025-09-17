@@ -11,6 +11,11 @@ export const getAudioVideoAPI = async()=>{
     return await commonAPI(`GET`,`${serverURL}/videos`,"")
 }
 
+//delete audio/video song api
+export const deleteAudioVideoAPI = async(id)=>{
+    return await commonAPI(`DELETE`, `${serverURL}/videos/${id}`,{})
+}
+
 //add gaming highlights api
 export const addGamingHighlightsAPI = async(reqbody)=>{
     return await commonAPI(`POST`,`${serverURL}/gamingHighlights`, reqbody)
@@ -60,3 +65,4 @@ export const addOtherVideoAPI = async(reqbody)=>{
 export const getOtherVideoAPI = async()=>{
     return await commonAPI(`GET`, `${serverURL}/otherVideos`,"")
 }
+

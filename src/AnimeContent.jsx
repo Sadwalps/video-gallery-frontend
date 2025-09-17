@@ -7,6 +7,7 @@ import emptybox from './assets/emptybox.png'
 import Modal from 'react-bootstrap/Modal';
 import { faHeart, faVideo } from '@fortawesome/free-solid-svg-icons';
 import { getAnimeContentAPI } from './service/allApi';
+import Videocard from './Videocard';
 function AnimeContent() {
   const [show, setShow] = useState(false);
   const [animeContent, setAnimeContent] = useState([])
@@ -70,7 +71,7 @@ getanimecontents()
                       <div className='container-fluid p-0'>
                         <div className="row">
                           <div className="col-12"><marquee behavior="" direction=""><h4 className='text-center py-lg-3 text-light'>{item?.title}</h4></marquee></div>
-                          <div className="col-4"><button className='btn border border-3 border-primary  w-100 py-lg-2 ' id='playbtn'>Play</button></div>
+                          <div className="col-4"><Videocard video={item}/></div>
                           <div className='col-4'><button className='btn  border border-3 border-danger  w-100 py-lg-2' id='likedbtn'><FontAwesomeIcon icon={faHeart} /></button></div>
                           <div className="col-4"><button className='btn  border border-3 border-danger  w-100 py-lg-2' id='removebtn'>Delete</button></div>
                         </div>
